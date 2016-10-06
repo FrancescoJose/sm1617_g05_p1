@@ -51,7 +51,7 @@
                 android:layout_width="0dp"
                 android:layout_weight="3"
                 android:layout_height="wrap_content"
-                android:hint="Su clave de acceso"
+                android:hint="@string/pass"
                 android:inputType="textPassword"
 
                 android:id="@+id/pass"
@@ -84,21 +84,22 @@
             android:layout_height="fill_parent">
 
             <TextView
-                android:layout_width="0dp"
                 android:layout_weight="2"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="@string/puerto"
                 android:textColor="#FFFFFF" />
 
             <EditText
-                android:layout_width="0dp"
                 android:layout_weight="3"
-                android:hint="1486"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/puerto"
                 android:textColorHint="#FFFFFF"
-                android:textColorLink="#FFFFFF" />
+                android:textColorLink="#FFFFFF"
+                android:hint="@string/edit_puerto"
+                android:inputType="number" />
         </TableRow>
 
     </TableLayout>
@@ -108,25 +109,14 @@
         android:layout_height="wrap_content"
         android:layout_gravity="right"
         android:text="@string/loginbtn"
-        android:id="@+id/loginbtn"/>
+        android:id="@+id/loginbtn"
+        android:onClick="Autenticacion" />
 
-    <TextView android:id="@+id/link_to_login"
-        android:layout_width="fill_parent"
+    <Button
+        style="@style/Base.V12.Widget.AppCompat.AutoCompleteTextView"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dip"
-        android:layout_marginBottom="40dip"
-        android:text="Ya tienes cuenta! Accede!"
-        android:gravity="center"
-        android:textSize="20dip"
-        android:textColor="#0b84aa"/>
-
-    <TextView android:id="@+id/register_error"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dip"
-        android:layout_marginBottom="40dip"
-
-        android:gravity="center"
-        android:textSize="20dip"
-        android:textColor="#0b84aa"/>
+        android:text="@string/acceder"
+        android:id="@+id/acceder"
+        android:layout_gravity="center_horizontal" />
 </LinearLayout>
