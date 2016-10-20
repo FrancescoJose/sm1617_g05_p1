@@ -55,7 +55,10 @@
                 android:inputType="textPassword"
 
                 android:id="@+id/pass"
-                android:textColorHint="#FFFFFF" />
+                android:textColorHint="#FFFFFF"
+                android:textColor="#FFFFFF"
+                android:textColorHighlight="#FFFFFF"
+                android:textColorLink="@color/abc_primary_text_disable_only_material_dark" />
         </TableRow>
 
         <TableRow
@@ -76,7 +79,8 @@
                 android:hint="Dirección de red o dominio"
                 android:layout_height="wrap_content"
                 android:id="@+id/dominio"
-                android:textColorHint="#FFFFFF" />
+                android:textColorHint="#FFFFFF"
+                android:textColor="#FFFFFF" />
         </TableRow>
 
         <TableRow
@@ -99,7 +103,8 @@
                 android:textColorHint="#FFFFFF"
                 android:textColorLink="#FFFFFF"
                 android:hint="@string/edit_puerto"
-                android:inputType="number" />
+                android:inputType="number"
+                android:textColor="#FFFFFF" />
         </TableRow>
 
     </TableLayout>
@@ -118,5 +123,6 @@
         android:layout_height="wrap_content"
         android:text="@string/acceder"
         android:id="@+id/acceder"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center_horizontal"
+        android:textColor="@android:color/holo_green_dark" />
 </LinearLayout>

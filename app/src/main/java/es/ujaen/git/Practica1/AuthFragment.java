@@ -6,9 +6,11 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
-
+import android.widget.Toast;
 
 
 /**
@@ -29,6 +31,11 @@ public class AuthFragment extends Fragment {
     private String mUser;
     private String mPass;
     private String mPuerto;
+
+    private Registro mRegistro = new Registro("","","",0);
+
+    private EditText mEditUser = null;
+    private EditText mEditPass = null;
 
 
 
@@ -55,22 +62,55 @@ public class AuthFragment extends Fragment {
         return fragment;
     }
 
+
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mUser = getArguments().getString(ARG_PARAM1);
-            mPass = getArguments().getString(ARG_PARAM2);
-            mPuerto = getArguments().getString(ARG_PARAM3);
+        if (savedInstanceState==null)
+            if (getArguments() != null) {
+                mUser = getArguments().getString(ARG_PARAM1);
+                mPass = getArguments().getString(ARG_PARAM2);
+                mPuerto = getArguments().getString(ARG_PARAM3);;
+                //mRegistro.setmUser(mUser);
+                //mRegistro.setmPass(mPass);
+                //mRegistro.setmPuerto(mPuerto);
+            }
 
-        }
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+
+        if(savedInstanceState!=null){
+            Toast.makeText(getActivity(),"Cambio de configuración",Toast.LENGTH_SHORT).show();
+            mRegistro.setmUser(savedInstanceState.getString(ARG_PARAM1));
+
+        }
         // Inflate the layout for this fragment
         View fragmento = inflater.inflate(R.layout.form, container, false);
+
+        /*redibuja(fragmento);
+
+        Button boton = (Button) fragmento.findViewById(R.id.loginbtn);
+
+
+        boton.setOnClickListener(new View.OnClickListener(){
+            @Override
+                    public void onClick(View v){
+                Toast.makeText(getActivity(),"Nombre "+mRegistro.getmUser(), Toast.LENGTH_SHORT).show();
+
+                }
+
+        });*/
+
+
+
+
+
         EditText user = (EditText)fragmento.findViewById(R.id.user2);
         EditText pass = (EditText)fragmento.findViewById(R.id.pass);
         EditText puert = (EditText)fragmento.findViewById(R.id.puerto);
@@ -83,6 +123,31 @@ public class AuthFragment extends Fragment {
 
 
     }
+
+    /*
+    private void redibuja(View fragmento){
+
+        mEditUser = (EditText)fragmento.findViewById(R.id.user2);
+        mEditPass = (EditText)fragmento.findViewById(R.id.pass);
+
+        mEditUser.setOnFocusChangeListener(new View.OnFocusChangeListener(){
+            @Override
+            public void onFocusChange(View v,boolean hasFocus){
+                mRegistro.setmUser(mEditUser.getEditableText().toString());
+            }
+        });
+
+        mEditUser.setText(mRegistro.getmUser());
+        mEditPass.setText(mRegistro.getmPass());
+
+
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState){
+
+        outState.putString(ARG_PARAM1,mRegistro.getmUser());
+    }*/
 
 
 

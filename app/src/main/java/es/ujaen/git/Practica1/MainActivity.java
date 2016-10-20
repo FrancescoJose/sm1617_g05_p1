@@ -19,9 +19,22 @@ public class MainActivity extends AppCompatActivity {
 
         FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
-        AuthFragment au = AuthFragment.newInstance("Juan","12345","6000");
-        ft.add(R.id.main_frame,au);
-        ft.addToBackStack(null);
+
+        android.support.v4.app.Fragment f = fm.findFragmentById(R.id.main_frame);
+
+
+        //Guardamos los datos para no perderlos cuando cambia la configuracion
+        if(f==null){
+            AuthFragment au = AuthFragment.newInstance("Juan","12345","6000");
+            //Se añade el fragmento a la vista
+            ft.add(R.id.main_frame,au);
+            //Se añade a la pila de procesos
+            ft.addToBackStack(null);
+
+
+        }
+
+
         ft.commit();
 
 
