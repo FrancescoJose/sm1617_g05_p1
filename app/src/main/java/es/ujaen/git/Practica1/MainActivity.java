@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
         FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
-        AuthFragment au = AuthFragment.newInstance("Juan","12345");
+        AuthFragment au = AuthFragment.newInstance("Juan","12345","6000");
         ft.add(R.id.main_frame,au);
         ft.addToBackStack(null);
         ft.commit();
@@ -28,15 +28,19 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private String user;
-    private String pass;
+    //private String user;
+    //private String pass;
 
     public void Autenticacion(View view){
 
         final EditText txtNombre = (EditText)findViewById(R.id.user2);
+        final EditText txtContra = (EditText)findViewById(R.id.pass);
+        final EditText txtPuerto = (EditText)findViewById(R.id.puerto);
 
         Intent i = new Intent(this, Autenticado.class);
         i.putExtra("Nombre", txtNombre.getText().toString());
+        i.putExtra("Contraseña", txtContra.getText().toString());
+        i.putExtra("Puerto",txtPuerto.getText().toString());
         i.setClass(MainActivity.this,Autenticado.class);
         startActivity(i);
 
