@@ -25,21 +25,18 @@ public class MainActivity extends AppCompatActivity {
 
         //Guardamos los datos para no perderlos cuando cambia la configuracion
         if(f==null){
-            AuthFragment au = AuthFragment.newInstance("Juan","12345","6000");
+            AuthFragment au = AuthFragment.newInstance("Juan","6000");
             //Se añade el fragmento a la vista
             ft.add(R.id.main_frame,au);
             //Se añade a la pila de procesos
             ft.addToBackStack(null);
 
-
         }
-
 
         ft.commit();
 
-
-
     }
+
 
 
     public void ejecutar_info (View view){
@@ -50,16 +47,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
     public void Autenticacion(View view){
 
         final EditText txtNombre = (EditText)findViewById(R.id.user2);
-        final EditText txtContra = (EditText)findViewById(R.id.pass);
         final EditText txtPuerto = (EditText)findViewById(R.id.puerto);
 
         Intent i = new Intent(this, Autenticado.class);
         i.putExtra("Nombre", txtNombre.getText().toString());
-        i.putExtra("Contraseña", txtContra.getText().toString());
         i.putExtra("Puerto",txtPuerto.getText().toString());
         i.setClass(MainActivity.this,Autenticado.class);
         startActivity(i);

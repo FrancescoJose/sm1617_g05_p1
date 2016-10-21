@@ -1,12 +1,6 @@
 package es.ujaen.git.Practica1;
 
-import android.app.Activity;
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.EditText;
 
-import java.net.URL;
 
 /**
  * Created by Francisco on 25/09/2016.
@@ -46,6 +40,11 @@ public class Registro {
     public String getmPass(){
 
         return mPass;
+    }
+
+
+    public int getmPort(){
+        return mPor;
     }
 
 

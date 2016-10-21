@@ -26,15 +26,16 @@ public class AuthFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-    private static final String ARG_PARAM3 = "param3";
+
     // TODO: Rename and change types of parameters
     private String mUser;
-    private String mPass;
     private String mPuerto;
 
     private Registro mRegistro = new Registro("","","",0);
 
 
+    private EditText user = null;
+    private EditText puert = null;
 
 
 
@@ -51,12 +52,11 @@ public class AuthFragment extends Fragment {
      * @return A new instance of fragment AuthFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static AuthFragment newInstance(String user, String pass,String puerto) {
+    public static AuthFragment newInstance(String user,String puerto) {
         AuthFragment fragment = new AuthFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, user);
-        args.putString(ARG_PARAM2, pass);
-        args.putString(ARG_PARAM3,puerto);
+        args.putString(ARG_PARAM2,puerto);
         fragment.setArguments(args);
         return fragment;
     }
@@ -69,8 +69,7 @@ public class AuthFragment extends Fragment {
         if (savedInstanceState==null)
             if (getArguments() != null) {
                 mUser = getArguments().getString(ARG_PARAM1);
-                mPass = getArguments().getString(ARG_PARAM2);
-                mPuerto = getArguments().getString(ARG_PARAM3);;
+                mPuerto = getArguments().getString(ARG_PARAM2);;
 
             }
 
@@ -93,13 +92,11 @@ public class AuthFragment extends Fragment {
 
 
 
-        EditText user = (EditText)fragmento.findViewById(R.id.user2);
-        EditText pass = (EditText)fragmento.findViewById(R.id.pass);
-        EditText puert = (EditText)fragmento.findViewById(R.id.puerto);
+        user = (EditText)fragmento.findViewById(R.id.user2);
+        puert = (EditText)fragmento.findViewById(R.id.puerto);
 
-        user.setText(mUser);
-        pass.setText(mPass);
-        puert.setText(mPuerto);
+        user.setText(mRegistro.getmUser());
+        puert.setText(mRegistro.getmPort());
 
         return fragmento;
 
