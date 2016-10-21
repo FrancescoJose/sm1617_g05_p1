@@ -16,7 +16,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".Autenticado"></activity>
-
+        <activity android:name=".InfoClase"></activity>
     </application>
 
 </manifest>

@@ -34,8 +34,7 @@ public class AuthFragment extends Fragment {
 
     private Registro mRegistro = new Registro("","","",0);
 
-    private EditText mEditUser = null;
-    private EditText mEditPass = null;
+
 
 
 
@@ -72,9 +71,7 @@ public class AuthFragment extends Fragment {
                 mUser = getArguments().getString(ARG_PARAM1);
                 mPass = getArguments().getString(ARG_PARAM2);
                 mPuerto = getArguments().getString(ARG_PARAM3);;
-                //mRegistro.setmUser(mUser);
-                //mRegistro.setmPass(mPass);
-                //mRegistro.setmPuerto(mPuerto);
+
             }
 
 
@@ -93,21 +90,6 @@ public class AuthFragment extends Fragment {
         // Inflate the layout for this fragment
         View fragmento = inflater.inflate(R.layout.form, container, false);
 
-        /*redibuja(fragmento);
-
-        Button boton = (Button) fragmento.findViewById(R.id.loginbtn);
-
-
-        boton.setOnClickListener(new View.OnClickListener(){
-            @Override
-                    public void onClick(View v){
-                Toast.makeText(getActivity(),"Nombre "+mRegistro.getmUser(), Toast.LENGTH_SHORT).show();
-
-                }
-
-        });*/
-
-
 
 
 
@@ -124,30 +106,6 @@ public class AuthFragment extends Fragment {
 
     }
 
-    /*
-    private void redibuja(View fragmento){
-
-        mEditUser = (EditText)fragmento.findViewById(R.id.user2);
-        mEditPass = (EditText)fragmento.findViewById(R.id.pass);
-
-        mEditUser.setOnFocusChangeListener(new View.OnFocusChangeListener(){
-            @Override
-            public void onFocusChange(View v,boolean hasFocus){
-                mRegistro.setmUser(mEditUser.getEditableText().toString());
-            }
-        });
-
-        mEditUser.setText(mRegistro.getmUser());
-        mEditPass.setText(mRegistro.getmPass());
-
-
-    }
-
-    @Override
-    public void onSaveInstanceState(Bundle outState){
-
-        outState.putString(ARG_PARAM1,mRegistro.getmUser());
-    }*/
 
 
 

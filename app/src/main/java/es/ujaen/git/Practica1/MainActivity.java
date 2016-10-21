@@ -41,8 +41,15 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    //private String user;
-    //private String pass;
+
+    public void ejecutar_info (View view){
+        Intent in = new Intent(this,InfoClase.class);
+
+        startActivity(in);
+
+    }
+
+
 
     public void Autenticacion(View view){
 

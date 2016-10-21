@@ -112,10 +112,11 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="right"
+        android:layout_gravity="center_horizontal"
         android:text="@string/loginbtn"
         android:id="@+id/loginbtn"
-        android:onClick="Autenticacion" />
+        android:onClick="Autenticacion"
+        android:layout_marginTop="10dp" />
 
     <Button
         style="@style/Base.V12.Widget.AppCompat.AutoCompleteTextView"
@@ -123,7 +124,8 @@
         android:layout_height="wrap_content"
         android:text="@string/info"
         android:id="@+id/info"
-        android:layout_gravity="center_horizontal"
+        android:layout_gravity="right"
         android:textColor="@android:color/holo_green_dark"
-        android:onClick="ejecutar_info" />
+        android:onClick="ejecutar_info"
+        android:layout_marginTop="25dp" />
 </LinearLayout>
