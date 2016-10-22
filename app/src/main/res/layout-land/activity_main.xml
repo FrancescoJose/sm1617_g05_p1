@@ -20,7 +20,8 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:background="#44345454"
-        android:padding="6dp"/>
+        android:padding="6dp"
+        android:textColor="@color/abc_primary_text_material_dark" />
 
     <FrameLayout
         android:layout_width="match_parent"

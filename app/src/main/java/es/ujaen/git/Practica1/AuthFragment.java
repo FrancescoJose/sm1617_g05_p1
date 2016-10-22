@@ -70,7 +70,8 @@ public class AuthFragment extends Fragment {
             if (getArguments() != null) {
                 mUser = getArguments().getString(ARG_PARAM1);
                 mPuerto = getArguments().getString(ARG_PARAM2);;
-
+                mRegistro.setmUser(mUser);
+                mRegistro.setmPuerto(Integer.parseInt(mPuerto));
             }
 
 
@@ -94,9 +95,9 @@ public class AuthFragment extends Fragment {
 
         user = (EditText)fragmento.findViewById(R.id.user2);
         puert = (EditText)fragmento.findViewById(R.id.puerto);
-
+        mPuerto=""+mRegistro.getmPort();
         user.setText(mRegistro.getmUser());
-        puert.setText(mRegistro.getmPort());
+        puert.setText(mPuerto);
 
         return fragmento;
 
